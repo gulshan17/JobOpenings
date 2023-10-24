@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  JobOpenings_db:
+    image: postgres:14.1
+    restart: always
+    ports:
+      - "15434:5432"
+    environment:
+      POSTGRES_DB: jobopenins
+      POSTGRES_USER: jobopenins
+      POSTGRES_PASSWORD: jobopenins
+    volumes:
+      - ./src/main/db/:/docker-entrypoint-initdb.d/
